@@ -17,6 +17,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y passwd
 
+      - name: Check assignment files
+        run: |
+          echo "Repository contents:"
+          find . -maxdepth 3 -type f -print
+
       - name: Run autograding tests
         run: |
-          sudo tests/test_password_expiry.sh
+          sudo bash tests/test_password_expiry.sh
